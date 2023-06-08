@@ -3,7 +3,7 @@ const activityRouter = Router();
 const {
   postActivity,
   getActivity,
-} = require("../controllers/activirtController");
+} = require("../controllers/activityController");
 
 activityRouter.post("/", postActivity);
 activityRouter.get("/", getActivity);
