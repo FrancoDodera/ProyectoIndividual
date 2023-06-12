@@ -3,8 +3,12 @@ import style from "./NavBar.module.css";
 const NavBar = () => {
   return (
     <div className={style.mainContainer}>
-      <NavLink to="/home">HOME</NavLink>
-      <NavLink to="/form">FORM</NavLink>
+      <NavLink to="/home">
+        <button className={style.button}>HOME</button>
+      </NavLink>
+      <NavLink to="/form">
+        <button className={style.button}>FORM</button>
+      </NavLink>
     </div>
   );
 };

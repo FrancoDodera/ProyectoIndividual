@@ -1,7 +1,18 @@
 .mainContainer {
-  display: flex;
-  flex-direction: row;
+  background-color: rgba(0, 0, 0, 0);
   justify-content: space-around;
-  border-radius: 15px;
-  border: 1px solid black;
+  border: 1px solid rgba(255, 255, 255, 0);
+}
+
+.button {
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+  background-color: #450f1a;
+  border: none;
+  padding: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
 }

@@ -5,9 +5,11 @@ const Card = ({ id, name, img, continent }) => {
   return (
     <div className={style.container}>
       <Link to={`/detail/${id}`}>
-        <img className={style.cardImage} src={img} alt="" />
-        <p>Name: {name} </p>
-        <p>Continent: {continent}</p>
+        <div className={style.imageContainer}>
+          <img className={style.cardImage} src={img} alt="" />
+        </div>
+        <h3 className={style.h3}> {name} </h3>
+        <p className={style.p}> {continent}</p>
       </Link>
     </div>
   );

@@ -10,7 +10,6 @@ const Home = () => {
 
   return (
     <>
-      <h1>Esta es la vista de la Home</h1>
       <CardsContainer />
     </>
   );
