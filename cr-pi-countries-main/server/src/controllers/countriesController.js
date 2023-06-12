@@ -40,7 +40,7 @@ const getCountriesById = async (req, res) => {
   if (id) {
     const country = countries.filter((count) => count.id === id);
     country.length
-      ? res.status(200).json(country)
+      ? res.status(200).json(country[0])
       : res.status(404).send("Not Found...");
   }
   //   res.send("NIY: ESTA RUTA TRAE LA INFO DE UN COUNTRY POR ID");
