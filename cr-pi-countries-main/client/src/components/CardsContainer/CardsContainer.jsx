@@ -1,15 +1,17 @@
+import React from "react";
 import Card from "../Card/Card";
 import style from "./CardContainer.module.css";
-import { useSelector } from "react-redux";
-const CardsContainer = () => {
-  const countries = useSelector((state) => state.countries);
+
+const CardsContainer = ({ countries, currentPage, pageSize }) => {
+  const startIndex = (currentPage - 1) * pageSize;
+  const endIndex = currentPage * pageSize;
+  const currentData = countries.slice(startIndex, endIndex);
+
   return (
     <div className={style.container}>
-      {countries.map(({ id, name, img, continent }) => {
-        return (
-          <Card key={id} id={id} name={name} img={img} continent={continent} />
-        );
-      })}
+      {currentData.map(({ id, name, img, continent }) => (
+        <Card key={id} id={id} name={name} img={img} continent={continent} />
+      ))}
     </div>
   );
 };

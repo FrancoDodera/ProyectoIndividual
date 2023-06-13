@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.button {
+  background-color: #ffffff98;
+  border: none;
+  color: #3306fa;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0 5px;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.page {
+  background-color: #ffffff98;
+  color: #3306fa;
+  border-radius: 10px;
+  margin: 0 5px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
