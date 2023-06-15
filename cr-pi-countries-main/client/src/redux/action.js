@@ -1,5 +1,12 @@
 import axios from "axios";
-import { GET_COUNTRY, GET_COUNTRIES } from "./action-types";
+import {
+  GET_COUNTRY,
+  GET_COUNTRIES,
+  GET_COUNTRIESBYNAME,
+  ORDER_COUNTRIES,
+  ORDER_CONTINENT,
+  ORDER_POPULATION,
+} from "./action-types";
 
 const endpoint = "http://localhost:3001";
 
@@ -17,4 +24,24 @@ export const getCountry = (id) => {
     const country = apiData.data;
     return dispatch({ type: GET_COUNTRY, payload: country });
   };
+};
+
+export const getCountryByName = (name) => {
+  return async function (dispatch) {
+    const apiData = await axios.get(`${endpoint}/countries/name?name=${name}`);
+    const countryName = apiData.data;
+    return dispatch({ type: GET_COUNTRIESBYNAME, payload: countryName });
+  };
+};
+
+export const orderCountries = (orderType) => {
+  return { type: ORDER_COUNTRIES, payload: orderType };
+};
+
+export const orderContinent = (orderType) => {
+  return { type: ORDER_CONTINENT, payload: orderType };
+};
+
+export const orderByPopulation = (population) => {
+  return { type: ORDER_POPULATION, payload: population };
 };

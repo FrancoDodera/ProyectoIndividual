@@ -62,7 +62,7 @@ const getCountriesByName = async (req, res) => {
         res.status(404).send("No hay paises con este nombre");
       }
     } else {
-      res.status(400).send("Falta el parametro");
+      res.status(200).send(countries);
     }
   } catch (error) {
     console.error(error);
