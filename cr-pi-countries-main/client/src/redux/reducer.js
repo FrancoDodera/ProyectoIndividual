@@ -6,12 +6,15 @@ import {
   ORDER_COUNTRIES,
   ORDER_CONTINENT,
   ORDER_POPULATION,
+  GET_ACTIVITY,
+  POST_ACTIVITY,
 } from "./action-types";
 
 const initialState = {
   countries: [],
   countryDetail: [],
   countriesByName: [],
+  activity: [],
 };
 
 const reducer = (state = initialState, action) => {
@@ -49,6 +52,13 @@ const reducer = (state = initialState, action) => {
       }
       return { ...state, countriesByName: sortedCountries };
     }
+    case GET_ACTIVITY: {
+      return { ...state, activity: action.payload };
+    }
+    case POST_ACTIVITY: {
+      return { ...state, activity: action.payload };
+    }
+
     default:
       return { ...state };
   }

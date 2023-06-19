@@ -18,7 +18,8 @@ const CardsContainer = ({ countries, currentPage, pageSize }) => {
   const [data, setData] = useState(currentData);
   const countryName = useSelector((state) => state.countriesByName);
   const [allCountries, setCountries] = useState([]);
-
+  const activities = useSelector((state) => state.activity);
+  console.log(activities);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -62,12 +63,16 @@ const CardsContainer = ({ countries, currentPage, pageSize }) => {
         <div>
           <label className={style.label}>Activity:</label>
           <select className={style.select}>
-            <option value="A">Activity</option>
+            <option value="Select">Select</option>
+            {activities?.map((activity) => (
+              <option>{activity.name}</option>
+            ))}
           </select>
         </div>
         <div>
           <label className={style.label}>Order:</label>
           <select className={style.select} onChange={handleOrder}>
+            <option value="Select">Select</option>
             <option value="A">A-Z</option>
             <option value="D">Z-A</option>
           </select>
@@ -75,6 +80,7 @@ const CardsContainer = ({ countries, currentPage, pageSize }) => {
         <div>
           <label className={style.label}>Countries:</label>
           <select className={style.select} onChange={handleContinent}>
+            <option value="Select">Select</option>
             <option value="All">All</option>
             <option value="Africa">Africa</option>
             <option value="North America">Nouth America</option>
@@ -87,6 +93,7 @@ const CardsContainer = ({ countries, currentPage, pageSize }) => {
         <div>
           <label className={style.label}>Population:</label>
           <select className={style.select} onChange={handlePopulation}>
+            <option>Select</option>
             <option value="More">More population</option>
             <option value="Lower">Lower population</option>
           </select>

@@ -13,11 +13,11 @@ const NavBar = () => {
         <NavLink to="/home">
           <button className={style.button}>HOME</button>
         </NavLink>
-        <NavLink to="/form">
-          <button className={style.button}>FORM</button>
-        </NavLink>
         <NavLink to="/about">
           <button className={style.button}>ABOUT</button>
+        </NavLink>
+        <NavLink to="/form">
+          <button className={style.button}>CREATE ACTIVITY</button>
         </NavLink>
       </div>
     </div>

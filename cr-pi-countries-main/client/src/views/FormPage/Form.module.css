@@ -1,0 +1,102 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+.title {
+  display: flex;
+  justify-content: center;
+  margin-top: 0%;
+  color: rgb(0, 4, 255);
+}
+.formContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgb(155, 151, 151);
+  border-radius: 30px;
+  border-color: black;
+  height: 570px;
+  width: 600px;
+}
+.divContainer {
+  display: flex;
+  align-items: center;
+  margin-left: 15%;
+}
+
+.camp {
+  font-size: 2rem;
+  color: black;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.select {
+  color: black;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  background-color: aliceblue;
+  border-radius: 10px;
+  width: 260px; /* Cambia el valor según el ancho deseado */
+}
+.input {
+  color: black;
+  font-size: 20px;
+  border-radius: 10px;
+  height: 25px;
+  background-color: aliceblue;
+}
+
+.buttonDiv {
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  text-align: end;
+  margin-top: 20px;
+}
+.button {
+  background-color: rgb(9, 9, 88);
+  color: wheat;
+  border-radius: 40px;
+}
+.selectedCountries {
+  display: flex;
+  color: black;
+  flex-direction: column;
+  border-radius: 30px;
+  background-color: rgb(155, 151, 151);
+  display: flex;
+  align-items: center;
+  min-width: 200px;
+  max-width: 400px;
+  max-height: 800px;
+  min-height: 200px;
+  text-align: center;
+  justify-content: center;
+}
+.titleSelect {
+  justify-content: center;
+  text-align: center;
+  font-size: 30px;
+  width: 350px;
+  color: blue;
+  text-transform: uppercase;
+  background-color: rgb(155, 151, 151);
+  border-radius: 20px;
+}
+.countryContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.span {
+  color: rgb(160, 22, 22);
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}

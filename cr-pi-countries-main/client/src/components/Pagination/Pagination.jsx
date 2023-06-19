@@ -28,14 +28,14 @@ const Pagination = ({ currentPage, pageSize, totalItems, onPageChange }) => {
         className={style.button}
         onClick={() => handlePageChange(currentPage - 1)}
       >
-        Anterior
+        Last
       </button>
       <h3 className={style.page}>{currentPage}</h3>
       <button
         className={style.button}
         onClick={() => handlePageChange(currentPage + 1)}
       >
-        Siguiente
+        Next
       </button>
     </div>
   );

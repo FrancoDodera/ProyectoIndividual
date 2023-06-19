@@ -6,6 +6,8 @@ import {
   ORDER_COUNTRIES,
   ORDER_CONTINENT,
   ORDER_POPULATION,
+  GET_ACTIVITY,
+  POST_ACTIVITY,
 } from "./action-types";
 
 const endpoint = "http://localhost:3001";
@@ -44,4 +46,19 @@ export const orderContinent = (orderType) => {
 
 export const orderByPopulation = (population) => {
   return { type: ORDER_POPULATION, payload: population };
+};
+
+export const getActivity = () => {
+  return async function (dispatch) {
+    const result = await axios.get(`${endpoint}/activities`);
+    return dispatch({ type: GET_ACTIVITY, payload: result.data });
+  };
+};
+
+export const postActivity = (activity) => {
+  return async function (dispatch) {
+    const result = await axios.post(`${endpoint}/activities`, activity);
+
+    return dispatch({ type: POST_ACTIVITY, payload: result.data });
+  };
 };
