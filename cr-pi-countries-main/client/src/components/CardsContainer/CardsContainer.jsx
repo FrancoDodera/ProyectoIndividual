@@ -7,6 +7,7 @@ import {
   orderCountries,
   orderContinent,
   orderByPopulation,
+  orderByActivity,
 } from "../../redux/action";
 import { useState } from "react";
 import SearchBar from "../SerchBar/SearchBar";
@@ -19,7 +20,7 @@ const CardsContainer = ({ countries, currentPage, pageSize }) => {
   const countryName = useSelector((state) => state.countriesByName);
   const [allCountries, setCountries] = useState([]);
   const activities = useSelector((state) => state.activity);
-  console.log(activities);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -57,16 +58,23 @@ const CardsContainer = ({ countries, currentPage, pageSize }) => {
     dispatch(orderByPopulation(event.target.value));
   };
 
+  const handleActivity = (event) => {
+    dispatch(orderByActivity(event.target.value));
+  };
   return (
     <div>
       <div className={style.navegation}>
         <div>
           <label className={style.label}>Activity:</label>
-          <select className={style.select}>
-            <option value="Select">Select</option>
-            {activities?.map((activity) => (
-              <option>{activity.name}</option>
-            ))}
+          <select className={style.select} onChange={handleActivity}>
+            <option value="All">All Activities</option>
+            {activities && activities.length > 0 ? (
+              activities.map((activity) => (
+                <option key={activity.id}>{activity.name}</option>
+              ))
+            ) : (
+              <option disabled>No hay actividades</option>
+            )}
           </select>
         </div>
         <div>

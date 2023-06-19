@@ -1,3 +1,8 @@
+.detailContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .container {
   display: flex;
   flex-direction: column;
@@ -55,4 +60,27 @@
   cursor: pointer;
   border-radius: 10px;
   font-size: 2rem;
+}
+
+.actContainer {
+  background-color: #21555fd9;
+  box-shadow: 10px 9px 12px 5px rgb(0 0 0 / 50%);
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.activities {
+  background-color: #340481d9;
+  border-radius: 15px;
+}
+
+.activityName {
+  text-align: center;
+  font-size: 25px;
+}
+.activityAtributes {
+  color: #010005;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
 }

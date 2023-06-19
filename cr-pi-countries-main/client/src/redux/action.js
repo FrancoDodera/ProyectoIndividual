@@ -8,6 +8,7 @@ import {
   ORDER_POPULATION,
   GET_ACTIVITY,
   POST_ACTIVITY,
+  FILTER_BYACTIVITY,
 } from "./action-types";
 
 const endpoint = "http://localhost:3001";
@@ -58,7 +59,10 @@ export const getActivity = () => {
 export const postActivity = (activity) => {
   return async function (dispatch) {
     const result = await axios.post(`${endpoint}/activities`, activity);
-
     return dispatch({ type: POST_ACTIVITY, payload: result.data });
   };
+};
+
+export const orderByActivity = (orderType) => {
+  return { type: FILTER_BYACTIVITY, payload: orderType };
 };

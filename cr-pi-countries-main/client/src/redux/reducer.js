@@ -1,4 +1,3 @@
-import { orderCountries } from "./action";
 import {
   GET_COUNTRIES,
   GET_COUNTRIESBYNAME,
@@ -8,6 +7,7 @@ import {
   ORDER_POPULATION,
   GET_ACTIVITY,
   POST_ACTIVITY,
+  FILTER_BYACTIVITY,
 } from "./action-types";
 
 const initialState = {
@@ -57,6 +57,18 @@ const reducer = (state = initialState, action) => {
     }
     case POST_ACTIVITY: {
       return { ...state, activity: action.payload };
+    }
+
+    case FILTER_BYACTIVITY: {
+      if (action.payload === "All") {
+        return { ...state, countriesByName: [...state.countries] };
+      }
+      let filteredCountries = state.countries.filter((country) => {
+        return country.Activities.some(
+          (activity) => activity.name === action.payload
+        );
+      });
+      return { ...state, countriesByName: filteredCountries };
     }
 
     default:

@@ -6,7 +6,7 @@ const getDbInfo = async () => {
   return await Country.findAll({
     include: {
       model: Activity,
-      attributes: ["name"],
+      attributes: ["name", "difficulty", "duration", "seasons"],
       through: {
         attributes: [],
       },
