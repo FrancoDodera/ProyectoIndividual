@@ -1,11 +1,11 @@
-const { Activity } = require("../db");
+const { Country, Activity } = require("../db");
 
 const postActivity = async (req, res) => {
-  const { name, difficulty, duration, seasons } = req.body;
+  const { name, difficulty, duration, seasons, country } = req.body;
   console.log("Add activity", req.body);
   const validateActivity = await Activity.findOne({
     where: {
-      name: name,
+      name: country,
     },
   });
   if (!name || !difficulty || !duration || !seasons) {
@@ -23,6 +23,9 @@ const postActivity = async (req, res) => {
       seasons,
     });
     res.status(200).json(newActivity);
+
+    const activityAdd = await Country.findAll({ where: { name: country } });
+    await newActivity.addCountry(activityAdd);
   }
 };
 
