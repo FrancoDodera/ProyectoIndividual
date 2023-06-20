@@ -8,7 +8,9 @@
   display: flex;
   justify-content: center;
   margin-top: 0%;
-  color: rgb(0, 4, 255);
+  color: rgb(4, 6, 105);
+  font-family: cursive;
+  font-size: 40px;
 }
 .formContainer {
   display: flex;
@@ -81,10 +83,11 @@
   text-align: center;
   font-size: 30px;
   width: 350px;
-  color: blue;
+  color: rgb(4, 6, 105);
   text-transform: uppercase;
   background-color: rgb(155, 151, 151);
   border-radius: 20px;
+  font-family: cursive;
 }
 .countryContainer {
   display: flex;

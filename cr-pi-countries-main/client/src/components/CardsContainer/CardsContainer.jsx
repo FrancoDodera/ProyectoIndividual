@@ -88,7 +88,6 @@ const CardsContainer = ({ countries, currentPage, pageSize }) => {
         <div>
           <label className={style.label}>Countries:</label>
           <select className={style.select} onChange={handleContinent}>
-            <option value="Select">Select</option>
             <option value="All">All</option>
             <option value="Africa">Africa</option>
             <option value="North America">Nouth America</option>

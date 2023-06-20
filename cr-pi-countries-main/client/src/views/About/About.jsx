@@ -5,30 +5,29 @@ const About = () => {
   return (
     <div className={style.container}>
       <div className={style.aboutContainer}>
-        <h1 className={style.aboutTitle}>Sobre mí</h1>
+        <h1 className={style.aboutTitle}> ABOUT THIS SITE</h1>
         <p className={style.aboutDescription}>
-          ¡Hola! Mi nombre es Franco Rodriguez Dodera y soy el desarrollador de
-          esta página.
+          HELLO! MY NAME IS FRANCO RODRIGUEZ DODERA AND I AM THE DEVELOPER OF
+          THIS PAGE.
         </p>
         <p className={style.aboutDescription}>
-          En este proyecto, he desarrollado una aplicación web utilizando
-          tecnologías de vanguardia. En el backend, utilicé Node.js y Express.js
-          para construir la parte del servidor. La base de datos fue conectada
-          mediante Sequelize, lo que me permitió gestionar de manera eficiente
-          los modelos de datos. En el frontend, aproveché la potencia de React y
-          Redux para crear las vistas y manejar el estado de la aplicación de
-          manera efectiva. Estas tecnologías me permitieron crear una interfaz
-          de usuario interactiva y dinámica, proporcionando una experiencia
-          fluida a los usuarios. Además, implementé validaciones en el
-          formulario utilizando JavaScript, lo que garantiza que los datos
-          ingresados por los usuarios sean correctos y cumplan con los
-          requisitos establecidos. Esto contribuye a la integridad y calidad de
-          la información en la aplicación.
+          IN THIS PROJECT, I HAVE DEVELOPED A WEB APPLICATION USING
+          STATE-OF-THE-ART TECHNOLOGIES. IN THE BACKEND, I USED NODE.JS AND
+          EXPRESS.JS TO BUILD THE SERVER PART. THE DATABASE WAS CONNECTED
+          THROUGH SEQUELIZE, WHICH ALLOWED ME TO EFFICIENTLY MANAGE THE DATA
+          MODELS. ON THE FRONTEND, I LEVERAGED THE POWER OF REACT AND REDUX TO
+          CREATE THE VIEWS AND MANAGE THE APPLICATION STATE EFFECTIVELY. THESE
+          TECHNOLOGIES ALLOWED ME TO CREATE AN INTERACTIVE AND DYNAMIC USER
+          INTERFACE, PROVIDING A SEAMLESS EXPERIENCE TO USERS. IN ADDITION, I
+          IMPLEMENTED VALIDATIONS IN THE FORM USING JAVASCRIPT, WHICH GUARANTEES
+          THAT THE DATA ENTERED BY THE USERS IS CORRECT AND MEETS THE
+          ESTABLISHED REQUIREMENTS. THIS CONTRIBUTES TO THE INTEGRITY AND
+          QUALITY OF THE INFORMATION IN THE APPLICATION.
         </p>
         <p className={style.aboutDescription}>
-          Si tienes alguna pregunta o sugerencia sobre esta página, no dudes en
-          contactarme en mi GMAIL: fancododera@gmail.com o redes sociales.
-          ¡Gracias por visitar mi sitio!
+          IF YOU HAVE ANY QUESTIONS OR SUGGESTIONS ABOUT THIS PAGE, DO NOT
+          HESITATE TO CONTACT ME AT MY GMAIL: FANCODODERA@GMAIL.COM OR SOCIAL
+          NETWORKS. THANKS FOR VISITING MY SITE
         </p>
         <div className={style.imgContainer}>
           <a href="https://github.com/FrancoDodera">
