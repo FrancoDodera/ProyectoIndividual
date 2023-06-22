@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import CardsContainer from "../../components/CardsContainer/CardsContainer";
 import Pagination from "../../components/Pagination/Pagination";
 
-import { getCountries } from "../../redux/action";
+import { getCountries, getActivity } from "../../redux/action";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -14,6 +14,7 @@ const Home = () => {
 
   useEffect(() => {
     dispatch(getCountries());
+    dispatch(getActivity());
   }, []);
 
   const handlePageChange = (page) => {
@@ -26,6 +27,7 @@ const Home = () => {
         countries={countries}
         currentPage={currentPage}
         pageSize={pageSize}
+        setCurrentPage={setCurrentPage}
       />
       <Pagination
         currentPage={currentPage}

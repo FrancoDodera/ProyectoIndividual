@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import style from "./Pagination.module.css";
 import { useSelector } from "react-redux";
+import style from "./Pagination.module.css";
 
 const Pagination = ({ currentPage, pageSize, totalItems, onPageChange }) => {
   const countriesGlobal = useSelector((state) => state.countries);

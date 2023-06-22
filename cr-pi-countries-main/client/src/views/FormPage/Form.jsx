@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import style from "./Form.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { getCountries, getActivity, postActivity } from "../../redux/action";
+import { getCountries, postActivity } from "../../redux/action";
 import { validate } from "./validation";
 const Form = () => {
   const dispatch = useDispatch();
@@ -17,18 +17,14 @@ const Form = () => {
 
   //ESTADO DE ERRORES
   const [error, setError] = useState({});
+
   const createActivity = () => {
-    // Implementa la lógica para crear la actividad turística aquí
     dispatch(postActivity(activity));
   };
 
   useEffect(() => {
     dispatch(getCountries());
-  }, [dispatch]);
-
-  useEffect(() => {
-    dispatch(getActivity());
-  }, [dispatch]);
+  }, [dispatch, error]);
 
   const handleChange = (event) => {
     setActivity({
@@ -69,19 +65,11 @@ const Form = () => {
     );
   };
 
-  // const handleSelectCountries = (event) => {
-  //   setActivity({
-  //     ...activity,
-  //     country: event.target.value,
-  //   });
-  // };
-
   const handleSelectCountries = (event) => {
     const selectedCountry = event.target.value;
     const isSelected = activity.country.includes(selectedCountry);
 
     if (isSelected) {
-      // Si el país ya está seleccionado, eliminarlo del array
       const updatedCountries = activity.country.filter(
         (country) => country !== selectedCountry
       );
@@ -93,7 +81,6 @@ const Form = () => {
         validate({ ...activity, [event.target.countries]: event.target.value })
       );
     } else {
-      // Si el país no está seleccionado, agregarlo al array
       setActivity({
         ...activity,
         country: [...activity.country, selectedCountry],
@@ -186,7 +173,11 @@ const Form = () => {
           <span className={style.span}>{error.country}</span>
 
           <div className={style.buttonDiv}>
-            <button className={style.button} onClick={createActivity}>
+            <button
+              className={style.button}
+              type="submit"
+              onClick={createActivity}
+            >
               Create Activity
             </button>
           </div>

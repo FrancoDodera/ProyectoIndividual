@@ -1,9 +1,8 @@
-import { useParams } from "react-router-dom";
+import { useParams, NavLink } from "react-router-dom";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import style from "./Detail.module.css";
 import { getCountry } from "../../redux/action";
-import { NavLink } from "react-router-dom";
 
 const Detail = () => {
   const { id } = useParams();
@@ -12,7 +11,7 @@ const Detail = () => {
   useEffect(() => {
     dispatch(getCountry(id));
   }, [dispatch, id]);
-  console.log(countries.Activity);
+
   return (
     <>
       <div className={style.detailContainer}>
@@ -22,7 +21,7 @@ const Detail = () => {
             {countries.Activities?.length ? (
               countries.Activities.map((activity) => {
                 return (
-                  <div className={style.activities} key={activity.id}>
+                  <div className={style.activities} key={activity.name}>
                     <h3 className={style.activityName}>
                       {activity.name.toUpperCase()}
                     </h3>
@@ -52,6 +51,7 @@ const Detail = () => {
         <div className={style.container}>
           <img className={style.img} src={countries?.img} alt="" />
           <h1 className={style.h1}> {countries?.name}</h1>
+          <h3 className={style.activityName}>ID:{countries?.id}</h3>
           <h2 className={style.h2}>Continent: {countries?.continent}</h2>
           <h2 className={style.h2}>Capital: {countries?.capital}</h2>
           {countries.subregion && (

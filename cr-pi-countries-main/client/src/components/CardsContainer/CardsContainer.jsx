@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Card from "../Card/Card";
 import style from "./CardContainer.module.css";
-import { useDispatch, useSelector } from "react-redux";
 import {
   getCountryByName,
   orderCountries,
@@ -9,10 +9,14 @@ import {
   orderByPopulation,
   orderByActivity,
 } from "../../redux/action";
-import { useState } from "react";
 import SearchBar from "../SerchBar/SearchBar";
 
-const CardsContainer = ({ countries, currentPage, pageSize }) => {
+const CardsContainer = ({
+  countries,
+  currentPage,
+  pageSize,
+  setCurrentPage,
+}) => {
   const startIndex = (currentPage - 1) * pageSize;
   const endIndex = currentPage * pageSize;
   const currentData = countries.slice(startIndex, endIndex);
@@ -42,11 +46,13 @@ const CardsContainer = ({ countries, currentPage, pageSize }) => {
     setData(currentData);
   }, [countryName, currentPage, pageSize]);
 
+  //FILTER HANDLERS
   const handleOrder = (event) => {
     dispatch(orderCountries(event.target.value));
   };
   const handleContinent = (event) => {
     dispatch(orderContinent(event.target.value));
+    setCurrentPage(1);
     if (event.target.value === "All") {
       setCountries([...allCountries]);
     } else {
@@ -60,6 +66,7 @@ const CardsContainer = ({ countries, currentPage, pageSize }) => {
 
   const handleActivity = (event) => {
     dispatch(orderByActivity(event.target.value));
+    setCurrentPage(1);
   };
   return (
     <div>
@@ -106,7 +113,7 @@ const CardsContainer = ({ countries, currentPage, pageSize }) => {
           </select>
         </div>
         <div className={style.SearchBar}>
-          <SearchBar setData={setData} />
+          <SearchBar setData={setData} setCurrentPage={setCurrentPage} />
         </div>
       </div>
       <div className={style.container}>

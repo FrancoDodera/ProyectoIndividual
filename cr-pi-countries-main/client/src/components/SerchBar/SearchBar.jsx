@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCountryByName } from "../../redux/action";
-import axios from "axios";
 import style from "./SearchBar.module.css";
 
 const SearchBar = (props) => {
-  const { setData } = props;
+  const { setData, setCurrentPage } = props;
   const dispatch = useDispatch();
   const [searchTerm, setSearchTerm] = useState("");
+
   const countryName = useSelector((state) => state.countriesByName);
 
   const handleChange = (event) => {
@@ -18,25 +18,8 @@ const SearchBar = (props) => {
     event.preventDefault();
     dispatch(getCountryByName(searchTerm));
     setData([...countryName]);
+    setCurrentPage(1);
   };
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await axios.get(
-  //         `http://localhost:3001/countries/name?name=${searchTerm}`
-  //       );
-  //       console.log("Nueva búsqueda:", searchTerm);
-  //       setData(response.data);
-  //     } catch (error) {
-  //       console.error("Error al obtener los resultados de búsqueda:", error);
-  //     }
-  //   };
-
-  //   if (searchTerm !== "") {
-  //     fetchData();
-  //   }
-  // }, [searchTerm]);
 
   return (
     <div className={style.SearchBar}>
